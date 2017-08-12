@@ -68,7 +68,7 @@ public enum PopTipExitAnimation : Int {
  - `pulse(offset: CGFloat?)`: The poptip pulsates by changing its size. The maximum amount of pulse increase can be provided optionally
  - `none`: No animation
  */
-public enum PopTipActionAnimation : Int {
+public enum PopTipActionAnimation : Float {
   /// The poptip bounces following its direction. The bounce offset can be provided optionally
   case bounce(CGFloat?)
   /// The poptip floats in place. The float offset can be provided optionally. Defaults to 8 points
