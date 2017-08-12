@@ -9,7 +9,7 @@
 import UIKit
 
 /// Enum that specifies the direction of the poptip
-public enum PopTipDirection {
+public enum PopTipDirection : Int {
   /// Up, the poptip will appear above the element, arrow pointing down
   case up
   /// Down, the poptip will appear below the element, arrow pointing up
@@ -30,7 +30,7 @@ public enum PopTipDirection {
  - `custom`: The Animation is provided by the user
  - `none`: No Animation
  */
-public enum PopTipEntranceAnimation {
+public enum PopTipEntranceAnimation : Int {
   /// The poptip scales from 0% to 100%
   case scale
   /// The poptip moves in position from the edge of the screen
@@ -50,7 +50,7 @@ public enum PopTipEntranceAnimation {
  - `custom`: The Animation is provided by the user
  - `none`: No Animation
  */
-public enum PopTipExitAnimation {
+public enum PopTipExitAnimation : Int {
   /// The poptip scales from 100% to 0%
   case scale
   /// The poptip fades out
@@ -68,7 +68,7 @@ public enum PopTipExitAnimation {
  - `pulse(offset: CGFloat?)`: The poptip pulsates by changing its size. The maximum amount of pulse increase can be provided optionally
  - `none`: No animation
  */
-public enum PopTipActionAnimation {
+public enum PopTipActionAnimation : Int {
   /// The poptip bounces following its direction. The bounce offset can be provided optionally
   case bounce(CGFloat?)
   /// The poptip floats in place. The float offset can be provided optionally. Defaults to 8 points
