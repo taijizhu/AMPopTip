@@ -446,6 +446,29 @@ open class PopTip: UIView {
       label.attributedText = nil
     }
   }
+  /// Shows an animated poptip in a given view, from a given rectangle. The property `isVisible` will be `true` as soon as the poptip is added to the given view.
+  ///
+  /// - Parameters:
+  ///   - customView: A custom view
+  ///   - direction: The direction of the poptip in relation to the element that generates it
+  ///   - view: The view that will hold the poptip as a subview.
+  ///   - frame: The originating frame. The poptip's arrow will point to the center of this frame.
+  ///   - duration: Optional time interval that determines when the poptip will self-dismiss.
+  open func show(customView: UIView, in view: UIView, from frame: CGRect) {
+    resetView()
+
+    text = nil
+    attributedText = nil
+    containerView = view
+    maxWidth = customView.frame.size.width
+    self.customView?.removeFromSuperview()
+    self.customView = customView
+    addSubview(customView)
+    customView.layoutIfNeeded()
+    from = frame
+
+    show(duration: 9999)
+  }
 
   /// Shows an animated poptip in a given view, from a given rectangle. The property `isVisible` will be `true` as soon as the poptip is added to the given view.
   ///
